@@ -6,7 +6,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     public EratosthenesPrimeSieve(int limit) {
         this.limit = limit;
     }
-    // private List<Integer> primalNumbers = new ArrayList<Integer>();
+    //checks if the number is prime
     @Override
     public boolean isPrime(int n) {
         if (n <= 1) {
@@ -28,6 +28,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
         return true;
     }
+    //prints all primes up to the given limit
     @Override
     public void printPrimes() {
         for (int i = 0; i < this.limit; i++) {
