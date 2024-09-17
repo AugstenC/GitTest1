@@ -8,34 +8,34 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     }
     //checks if the number is prime
     @Override
-    public boolean isPrime(int n) {
-        if (n <= 1) {
+    public boolean isPrime(int p) {
+        if (p <= 1) {
             return false;
         }
-        if (n == 2 || n == 3) {
+        if (p == 2 || p == 3) {
             return true;
         }
-        if (n % 2 == 0 || n % 3 == 0) {
+        if (p % 2 == 0 || p % 3 == 0) {
             return false;
         }
 
-        int limit = (int) Math.sqrt(n);
-        for (int i = 5; i <= limit; i += 6) {
-            if (n % i == 0 || n % (i + 2) == 0) {
+        for (int i = 2; i < p; i++) {
+            if (p % i == 0) {
                 return false;
-            }
+            } else return true;
         }
-
-        return true;
+        return false;
     }
     //prints all primes up to the given limit
     @Override
     public void printPrimes() {
+        System.out.print("Primesal: ");
         for (int i = 0; i < this.limit; i++) {
             boolean b = isPrime(i);
             if(b){
-                System.out.println(i);
+                System.out.print(i+ " ");
             }
         }
+        System.out.println();
     }
 }
